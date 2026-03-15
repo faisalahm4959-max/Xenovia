@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Xenovia — AI Automation for YouTube</title>
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -10,11 +11,11 @@ body { background: #0a0a0a; color: white; font-family: Arial; overflow-x: hidden
 .nav-logo { font-size: 24px; font-weight: bold; letter-spacing: 4px; }
 .nav-logo span { color: #7c3aed; }
 .nav-btns { display: flex; gap: 12px; }
-.nav-btn { background: none; border: 1px solid #333; color: #aaa; padding: 8px 20px; border-radius: 6px; cursor: pointer; font-size: 13px; font-family: Arial; transition: all 0.15s; }
+.nav-btn { background: none; border: 1px solid #333; color: #aaa; padding: 10px 24px; border-radius: 6px; cursor: pointer; font-size: 15px; font-family: Arial; transition: all 0.15s; }
 .nav-btn:hover { border-color: #7c3aed; color: white; }
 .nav-btn.primary { background: #7c3aed; border-color: #7c3aed; color: white; }
 .nav-btn.primary:hover { background: #6d28d9; }
-.hero { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 80px 40px; }
+.hero { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 40px 24px; }
 .hero-badge { background: rgba(124,58,237,0.15); border: 1px solid rgba(124,58,237,0.3); color: #a78bfa; font-size: 12px; padding: 6px 16px; border-radius: 20px; margin-bottom: 24px; letter-spacing: 1px; }
 @media (max-width: 768px) {
   .nav { padding: 16px 20px; }
@@ -168,7 +169,7 @@ body { background: #0a0a0a; color: white; font-family: Arial; overflow-x: hidden
 
   <div class="hero">
     <div class="hero-badge">✦ Powered by Xeno Core AI Engine</div>
-    <h1>Automate Your <span>YouTube Channel</span> with AI</h1>
+    <h1>Automate Your <span>YouTube Channel</span><br>with AI</h1>
     <p>Script, titles, tags, description — all in <strong>ONE CLICK.</strong> Build AI workflows with drag and drop.</p>
     <div class="hero-btns">
       <button class="btn-primary" onclick="showTool()">⚡ Start Free — No credit card</button>
