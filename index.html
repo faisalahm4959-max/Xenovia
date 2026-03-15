@@ -1,73 +1,58 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Xenovia — AI Automation for YouTube</title>
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body { background: #0a0a0a; color: white; font-family: Arial; overflow-x: hidden; }
+
+/* LANDING */
 .landing { min-height: 100vh; display: flex; flex-direction: column; }
 .nav { padding: 20px 60px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #1a1a1a; }
-.nav-logo { font-size: 24px; font-weight: bold; letter-spacing: 4px; }
+.nav-logo { font-size: 28px; font-weight: bold; letter-spacing: 4px; }
 .nav-logo span { color: #7c3aed; }
 .nav-btns { display: flex; gap: 12px; }
-.nav-btn { background: none; border: 1px solid #333; color: #aaa; padding: 10px 24px; border-radius: 6px; cursor: pointer; font-size: 15px; font-family: Arial; transition: all 0.15s; }
+.nav-btn { background: none; border: 1px solid #333; color: #aaa; padding: 10px 24px; border-radius: 6px; cursor: pointer; font-size: 14px; font-family: Arial; transition: all 0.15s; }
 .nav-btn:hover { border-color: #7c3aed; color: white; }
 .nav-btn.primary { background: #7c3aed; border-color: #7c3aed; color: white; }
-.nav-btn.primary:hover { background: #6d28d9; }
 .hero { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 40px 24px; }
-.hero-badge { background: rgba(124,58,237,0.15); border: 1px solid rgba(124,58,237,0.3); color: #a78bfa; font-size: 12px; padding: 6px 16px; border-radius: 20px; margin-bottom: 24px; letter-spacing: 1px; }
-@media (max-width: 768px) {
-  .nav { padding: 16px 20px; }
-  .hero h1 { font-size: 32px !important; }
-  .hero p { font-size: 15px; }
-  .hero-btns { flex-direction: column; align-items: center; }
-  .btn-primary, .btn-secondary { width: 100%; text-align: center; }
-  .features-grid { grid-template-columns: 1fr !important; }
-  .pricing-grid { grid-template-columns: 1fr !important; }
-  .footer { flex-direction: column; gap: 12px; text-align: center; }
-  .workspace { flex-direction: column; }
-  .sidebar { width: 100% !important; height: 200px; overflow-x: auto; overflow-y: hidden; display: flex; flex-direction: row; gap: 8px; padding: 8px; }
-  .node-group { min-width: 120px; }
-  .right-panel { width: 100% !important; height: 150px; }
-}
+.hero-badge { background: rgba(124,58,237,0.15); border: 1px solid rgba(124,58,237,0.3); color: #a78bfa; font-size: 12px; padding: 6px 16px; border-radius: 20px; margin-bottom: 24px; }
 .hero h1 { font-size: 64px; font-weight: bold; line-height: 1.1; margin-bottom: 20px; max-width: 800px; }
 .hero h1 span { color: #7c3aed; }
 .hero p { font-size: 18px; color: #888; max-width: 560px; line-height: 1.7; margin-bottom: 40px; }
-.hero-btns { display: flex; gap: 16px; margin-bottom: 60px; }
-.btn-primary { background: #7c3aed; color: white; border: none; padding: 16px 36px; border-radius: 8px; font-size: 16px; cursor: pointer; font-family: Arial; font-weight: bold; transition: all 0.15s; }
-.btn-primary:hover { background: #6d28d9; transform: translateY(-1px); }
-.btn-secondary { background: none; color: white; border: 1px solid #333; padding: 16px 36px; border-radius: 8px; font-size: 16px; cursor: pointer; font-family: Arial; transition: all 0.15s; }
-.btn-secondary:hover { border-color: #7c3aed; }
+.hero-btns { display: flex; gap: 16px; }
+.btn-primary { background: #7c3aed; color: white; border: none; padding: 16px 36px; border-radius: 8px; font-size: 16px; cursor: pointer; font-family: Arial; font-weight: bold; }
+.btn-secondary { background: none; color: white; border: 1px solid #333; padding: 16px 36px; border-radius: 8px; font-size: 16px; cursor: pointer; font-family: Arial; }
 .features { padding: 80px 60px; background: #0d0d0d; }
 .features h2 { text-align: center; font-size: 36px; margin-bottom: 48px; }
-.features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 1000px; margin: 0 auto; }
-.feature-card { background: #111; border: 1px solid #222; border-radius: 12px; padding: 28px; transition: border-color 0.15s; }
+.features-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; max-width: 1000px; margin: 0 auto; }
+.feature-card { background: #111; border: 1px solid #222; border-radius: 12px; padding: 28px; }
 .feature-card:hover { border-color: #7c3aed; }
 .feature-icon { font-size: 32px; margin-bottom: 16px; }
 .feature-title { font-size: 16px; font-weight: bold; margin-bottom: 8px; }
 .feature-desc { font-size: 13px; color: #666; line-height: 1.6; }
 .pricing { padding: 80px 60px; }
 .pricing h2 { text-align: center; font-size: 36px; margin-bottom: 48px; }
-.pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 900px; margin: 0 auto; }
-.price-card { background: #111; border: 1px solid #222; border-radius: 12px; padding: 32px; text-align: center; transition: all 0.15s; }
+.pricing-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; max-width: 900px; margin: 0 auto; }
+.price-card { background: #111; border: 1px solid #222; border-radius: 12px; padding: 32px; text-align: center; }
 .price-card.featured { border-color: #7c3aed; background: #0d0b1a; }
-.price-card:hover { border-color: #7c3aed; }
-.price-name { font-size: 14px; color: #888; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 16px; }
+.price-name { font-size: 14px; color: #888; text-transform: uppercase; margin-bottom: 16px; }
 .price-amount { font-size: 42px; font-weight: bold; margin-bottom: 4px; }
 .price-period { font-size: 13px; color: #555; margin-bottom: 24px; }
 .price-features { list-style: none; text-align: left; margin-bottom: 28px; }
 .price-features li { font-size: 13px; color: #888; padding: 6px 0; border-bottom: 1px solid #1a1a1a; }
 .price-features li::before { content: "✓ "; color: #7c3aed; }
-.price-btn { width: 100%; padding: 12px; border-radius: 7px; font-size: 14px; cursor: pointer; font-family: Arial; font-weight: bold; transition: all 0.15s; }
+.price-btn { width: 100%; padding: 12px; border-radius: 7px; font-size: 14px; cursor: pointer; font-family: Arial; font-weight: bold; }
 .price-btn.free { background: none; border: 1px solid #333; color: #aaa; }
-.price-btn.free:hover { border-color: #7c3aed; color: white; }
 .price-btn.paid { background: #7c3aed; border: none; color: white; }
-.price-btn.paid:hover { background: #6d28d9; }
 .footer { padding: 40px 60px; border-top: 1px solid #1a1a1a; display: flex; align-items: center; justify-content: space-between; }
 .footer-logo { font-size: 18px; font-weight: bold; letter-spacing: 3px; }
 .footer-logo span { color: #7c3aed; }
 .footer-text { font-size: 12px; color: #444; }
+
+/* PC TOOL */
 .tool-page { display: none; height: 100vh; flex-direction: column; }
 .topbar { background: #111; border-bottom: 1px solid #222; padding: 0 20px; height: 52px; display: flex; align-items: center; justify-content: space-between; flex-shrink: 0; }
 .logo { font-size: 22px; font-weight: bold; letter-spacing: 4px; }
@@ -81,10 +66,9 @@ body { background: #0a0a0a; color: white; font-family: Arial; overflow-x: hidden
 .sidebar { width: 220px; background: #111; border-right: 1px solid #222; padding: 16px 12px; overflow-y: auto; flex-shrink: 0; }
 .sidebar-title { font-size: 10px; letter-spacing: 2px; color: #555; text-transform: uppercase; margin-bottom: 12px; }
 .search-box { width: 100%; background: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 6px; padding: 8px 12px; color: white; font-size: 13px; margin-bottom: 16px; outline: none; }
-.search-box:focus { border-color: #7c3aed; }
 .search-box::placeholder { color: #444; }
 .node-group { margin-bottom: 16px; }
-.node-group-title { font-size: 10px; color: #444; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px; }
+.node-group-title { font-size: 10px; color: #444; text-transform: uppercase; margin-bottom: 8px; }
 .node-item { display: flex; align-items: center; gap: 10px; padding: 9px 10px; border-radius: 7px; cursor: grab; font-size: 13px; color: #bbb; border: 1px solid transparent; margin-bottom: 4px; transition: all 0.15s; user-select: none; }
 .node-item:hover { background: #1a1a1a; border-color: #2a2a2a; color: white; }
 .node-icon { width: 28px; height: 28px; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 14px; flex-shrink: 0; }
@@ -94,25 +78,24 @@ body { background: #0a0a0a; color: white; font-family: Arial; overflow-x: hidden
 .icon-trigger { background: #3a1a1a; }
 .icon-tool { background: #2a2a1a; }
 .canvas { flex: 1; position: relative; overflow: hidden; background-color: #0d0d0d; background-image: radial-gradient(circle, #1e1e1e 1px, transparent 1px); background-size: 28px 28px; }
-.canvas-empty { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; pointer-events: none; }
+.canvas-empty { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); text-align: center; pointer-events: none; }
 .canvas-empty h2 { font-size: 20px; color: #2a2a2a; font-weight: normal; margin-bottom: 8px; }
 .canvas-empty p { font-size: 13px; color: #1e1e1e; }
 .canvas-node { position: absolute; background: #161616; border: 1px solid #2a2a2a; border-radius: 10px; min-width: 210px; cursor: move; user-select: none; z-index: 10; }
 .canvas-node:hover { border-color: #7c3aed; }
 .canvas-node.running { border-color: #f59e0b; animation: nodeRun 0.8s infinite; }
-.canvas-node.done { border-color: #22c55e; box-shadow: 0 0 0 2px #22c55e22; }
+.canvas-node.done { border-color: #22c55e; }
 .canvas-node.error { border-color: #e63329; }
 @keyframes nodeRun { 0%,100%{box-shadow:0 0 0 2px #f59e0b22}50%{box-shadow:0 0 12px 4px #f59e0b44} }
 .node-header { padding: 10px 12px; border-bottom: 1px solid #222; display: flex; align-items: center; gap: 8px; }
 .node-header-icon { width: 24px; height: 24px; border-radius: 5px; display: flex; align-items: center; justify-content: center; font-size: 12px; flex-shrink: 0; }
 .node-header-name { font-size: 13px; font-weight: bold; color: #ddd; flex: 1; }
-.node-delete { background: none; border: none; color: #333; cursor: pointer; font-size: 18px; line-height: 1; }
+.node-delete { background: none; border: none; color: #333; cursor: pointer; font-size: 18px; }
 .node-delete:hover { color: #e63329; }
 .node-body { padding: 10px 12px; }
 .node-field { margin-bottom: 8px; }
-.node-field label { display: block; font-size: 10px; color: #555; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 4px; }
+.node-field label { display: block; font-size: 10px; color: #555; text-transform: uppercase; margin-bottom: 4px; }
 .node-field input, .node-field textarea, .node-field select { width: 100%; background: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 5px; padding: 6px 8px; color: #ccc; font-size: 12px; outline: none; font-family: Arial; }
-.node-field input:focus, .node-field textarea:focus { border-color: #7c3aed; }
 .node-field textarea { resize: vertical; min-height: 70px; }
 .node-output { margin-top: 8px; background: #0d0d0d; border: 1px solid #1a1a1a; border-radius: 5px; padding: 8px; font-size: 11px; color: #22c55e; max-height: 100px; overflow-y: auto; display: none; white-space: pre-wrap; }
 .port { width: 12px; height: 12px; background: #333; border: 2px solid #444; border-radius: 50%; position: absolute; cursor: crosshair; z-index: 20; transition: all 0.15s; }
@@ -130,7 +113,7 @@ body { background: #0a0a0a; color: white; font-family: Arial; overflow-x: hidden
 .workflow-item-name { font-size: 13px; color: #ccc; margin-bottom: 3px; }
 .workflow-item-sub { font-size: 11px; color: #444; }
 .sdot { display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: #22c55e; margin-right: 6px; }
-.add-btn { width: 100%; background: none; border: 1px dashed #2a2a2a; color: #444; padding: 10px; border-radius: 7px; cursor: pointer; font-size: 13px; transition: all 0.15s; }
+.add-btn { width: 100%; background: none; border: 1px dashed #2a2a2a; color: #444; padding: 10px; border-radius: 7px; cursor: pointer; font-size: 13px; }
 .add-btn:hover { border-color: #7c3aed; color: #7c3aed; }
 .run-btn { width: 100%; background: #14532d; border: 1px solid #22c55e44; color: #22c55e; padding: 11px; border-radius: 7px; cursor: pointer; font-size: 14px; font-weight: bold; }
 .run-btn:disabled { opacity: 0.5; cursor: not-allowed; }
@@ -138,11 +121,55 @@ body { background: #0a0a0a; color: white; font-family: Arial; overflow-x: hidden
 .bottombar { background: #111; border-top: 1px solid #222; height: 30px; display: flex; align-items: center; padding: 0 16px; gap: 20px; flex-shrink: 0; }
 .bottom-item { font-size: 11px; color: #444; }
 .bottom-item span { color: #7c3aed; }
-.toast { position: fixed; bottom: 50px; left: 50%; transform: translateX(-50%); background: #1a1a1a; border: 1px solid #7c3aed; color: #ccc; padding: 10px 24px; border-radius: 8px; font-size: 13px; z-index: 999; opacity: 0; transition: opacity 0.3s; pointer-events: none; }
+
+/* MOBILE TOOL */
+.mobile-tool { display: none; height: 100vh; flex-direction: column; overflow: hidden; }
+.mob-topbar { background: #111; border-bottom: 1px solid #222; padding: 10px 16px; display: flex; align-items: center; justify-content: space-between; flex-shrink: 0; }
+.mob-logo { font-size: 20px; font-weight: bold; letter-spacing: 3px; }
+.mob-logo span { color: #7c3aed; }
+.mob-home-btn { background: none; border: 1px solid #333; color: #aaa; padding: 6px 14px; border-radius: 6px; cursor: pointer; font-size: 13px; font-family: Arial; }
+.mob-workspace { display: flex; flex: 1; overflow: hidden; }
+
+/* বাম sidebar */
+.mob-sidebar { width: 90px; background: #111; border-right: 1px solid #222; overflow-y: auto; padding: 8px 6px; flex-shrink: 0; }
+.mob-sidebar-title { font-size: 9px; color: #555; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; text-align: center; }
+.mob-node-btn { width: 100%; background: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 8px; padding: 8px 4px; color: #ccc; font-size: 10px; cursor: pointer; font-family: Arial; text-align: center; margin-bottom: 6px; display: flex; flex-direction: column; align-items: center; gap: 3px; transition: border-color 0.15s; }
+.mob-node-btn:active { border-color: #7c3aed; background: #1a1040; }
+.mob-node-icon { font-size: 20px; }
+
+/* canvas */
+.mob-canvas { flex: 1; position: relative; background-color: #0d0d0d; background-image: radial-gradient(circle, #1e1e1e 1px, transparent 1px); background-size: 24px 24px; overflow: hidden; touch-action: none; }
+.mob-empty-txt { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); font-size: 13px; color: #2a2a2a; text-align: center; pointer-events: none; }
+
+/* mobile node card */
+.mob-card { position: absolute; background: #161616; border: 1px solid #2a2a2a; border-radius: 10px; width: 200px; z-index: 10; }
+.mob-card.done { border-color: #22c55e; }
+.mob-card.running { border-color: #f59e0b; }
+.mob-card.error { border-color: #e63329; }
+.mob-card-head { padding: 10px 12px; border-bottom: 1px solid #222; display: flex; align-items: center; justify-content: space-between; cursor: move; user-select: none; }
+.mob-card-title { font-size: 13px; font-weight: bold; color: #ddd; }
+.mob-card-del { background: none; border: none; color: #444; font-size: 18px; cursor: pointer; padding: 0; }
+.mob-card-body { padding: 10px 12px; }
+.mob-field { margin-bottom: 8px; }
+.mob-field label { display: block; font-size: 10px; color: #555; text-transform: uppercase; margin-bottom: 4px; }
+.mob-field input, .mob-field textarea, .mob-field select { width: 100%; background: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 5px; padding: 7px 8px; color: #ccc; font-size: 12px; outline: none; font-family: Arial; }
+.mob-field textarea { min-height: 70px; resize: vertical; }
+.mob-out { display: none; margin-top: 6px; background: #0d0d0d; border: 1px solid #1a1a1a; border-radius: 5px; padding: 6px; font-size: 11px; color: #22c55e; white-space: pre-wrap; max-height: 80px; overflow-y: auto; }
+
+/* mobile bottom */
+.mob-bottom { background: #111; border-top: 1px solid #222; padding: 10px 16px; display: flex; flex-direction: column; gap: 8px; flex-shrink: 0; }
+.mob-workflows { display: flex; gap: 8px; }
+.mob-wf-btn { flex: 1; background: #1a1a1a; border: 1px solid #222; border-radius: 7px; padding: 9px; color: #ccc; font-size: 12px; cursor: pointer; font-family: Arial; text-align: center; }
+.mob-run-btn { width: 100%; background: #14532d; border: 1px solid #22c55e44; color: #22c55e; padding: 13px; border-radius: 8px; cursor: pointer; font-size: 15px; font-weight: bold; font-family: Arial; }
+.mob-run-btn:disabled { opacity: 0.5; }
+.mob-status { font-size: 11px; color: #555; }
+
+/* Toast & Modal */
+.toast { position: fixed; bottom: 60px; left: 50%; transform: translateX(-50%); background: #1a1a1a; border: 1px solid #7c3aed; color: #ccc; padding: 10px 24px; border-radius: 8px; font-size: 13px; z-index: 999; opacity: 0; transition: opacity 0.3s; pointer-events: none; max-width: 90vw; text-align: center; }
 .toast.show { opacity: 1; }
-.modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.88); z-index: 100; display: none; align-items: center; justify-content: center; }
+.modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.88); z-index: 200; display: none; align-items: center; justify-content: center; padding: 20px; }
 .modal-overlay.show { display: flex; }
-.modal { background: #161616; border: 1px solid #333; border-radius: 12px; width: 700px; max-height: 82vh; display: flex; flex-direction: column; }
+.modal { background: #161616; border: 1px solid #333; border-radius: 12px; width: 100%; max-width: 700px; max-height: 85vh; display: flex; flex-direction: column; }
 .modal-head { padding: 16px 20px; border-bottom: 1px solid #222; display: flex; align-items: center; justify-content: space-between; }
 .modal-title { font-size: 15px; font-weight: bold; color: #ddd; }
 .modal-badge { background: #22c55e22; color: #22c55e; font-size: 11px; padding: 3px 10px; border-radius: 10px; }
@@ -152,7 +179,21 @@ body { background: #0a0a0a; color: white; font-family: Arial; overflow-x: hidden
 .modal-foot { padding: 14px 20px; border-top: 1px solid #222; display: flex; gap: 10px; justify-content: flex-end; }
 .modal-btn { background: #1a1a1a; border: 1px solid #333; color: #aaa; padding: 8px 18px; border-radius: 6px; cursor: pointer; font-size: 13px; }
 .modal-btn.green { background: #14532d; border-color: #22c55e44; color: #22c55e; }
-.modal-btn:hover { border-color: #7c3aed; color: white; }
+
+/* Responsive landing */
+@media (max-width: 768px) {
+  .nav { padding: 16px 20px; }
+  .nav-logo { font-size: 22px; }
+  .hero h1 { font-size: 36px; }
+  .hero p { font-size: 15px; }
+  .hero-btns { flex-direction: column; align-items: stretch; width: 100%; }
+  .btn-primary, .btn-secondary { width: 100%; text-align: center; }
+  .features { padding: 50px 20px; }
+  .features-grid { grid-template-columns: 1fr; }
+  .pricing { padding: 50px 20px; }
+  .pricing-grid { grid-template-columns: 1fr; }
+  .footer { flex-direction: column; gap: 12px; text-align: center; padding: 30px 20px; }
+}
 </style>
 </head>
 <body>
@@ -166,7 +207,6 @@ body { background: #0a0a0a; color: white; font-family: Arial; overflow-x: hidden
       <button class="nav-btn primary" onclick="showTool()">Start Free</button>
     </div>
   </nav>
-
   <div class="hero">
     <div class="hero-badge">✦ Powered by Xeno Core AI Engine</div>
     <h1>Automate Your <span>YouTube Channel</span><br>with AI</h1>
@@ -176,98 +216,47 @@ body { background: #0a0a0a; color: white; font-family: Arial; overflow-x: hidden
       <button class="btn-secondary" onclick="showTool()">▶ Watch Demo</button>
     </div>
   </div>
-
   <div class="features">
     <h2>Everything you need</h2>
     <div class="features-grid">
-      <div class="feature-card">
-        <div class="feature-icon">🤖</div>
-        <div class="feature-title">AI Script Writer</div>
-        <div class="feature-desc">Write scripts with Claude, ChatGPT, or Gemini in one click.</div>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">🎯</div>
-        <div class="feature-title">SEO Optimizer</div>
-        <div class="feature-desc">Auto keyword research, tags, description — rank on YouTube.</div>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">🔄</div>
-        <div class="feature-title">Drag-Drop Workflow</div>
-        <div class="feature-desc">Build powerful automations with drag-drop — no coding needed.</div>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">📧</div>
-        <div class="feature-title">Auto Send</div>
-        <div class="feature-desc">Send AI output directly to Gmail, Telegram, or Discord.</div>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">📄</div>
-        <div class="feature-title">Google Docs Save</div>
-        <div class="feature-desc">Scripts automatically saved to Google Docs.</div>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">⚡</div>
-        <div class="feature-title">Xeno Core Engine</div>
-        <div class="feature-desc">Fast, reliable AI engine — run thousands of workflows daily.</div>
-      </div>
+      <div class="feature-card"><div class="feature-icon">🤖</div><div class="feature-title">AI Script Writer</div><div class="feature-desc">Write scripts with Claude, ChatGPT, or Gemini in one click.</div></div>
+      <div class="feature-card"><div class="feature-icon">🎯</div><div class="feature-title">SEO Optimizer</div><div class="feature-desc">Auto keyword research, tags, description — rank on YouTube.</div></div>
+      <div class="feature-card"><div class="feature-icon">🔄</div><div class="feature-title">Drag-Drop Workflow</div><div class="feature-desc">Build powerful automations with drag-drop — no coding needed.</div></div>
+      <div class="feature-card"><div class="feature-icon">📧</div><div class="feature-title">Auto Send</div><div class="feature-desc">Send AI output directly to Gmail, Telegram, or Discord.</div></div>
+      <div class="feature-card"><div class="feature-icon">📄</div><div class="feature-title">Google Docs Save</div><div class="feature-desc">Scripts automatically saved to Google Docs.</div></div>
+      <div class="feature-card"><div class="feature-icon">⚡</div><div class="feature-title">Xeno Core Engine</div><div class="feature-desc">Fast, reliable AI engine — run thousands of workflows daily.</div></div>
     </div>
   </div>
-
   <div class="pricing">
     <h2>Simple Pricing</h2>
     <div class="pricing-grid">
       <div class="price-card">
-        <div class="price-name">Free</div>
-        <div class="price-amount">$0</div>
-        <div class="price-period">forever</div>
-        <ul class="price-features">
-          <li>5 workflows/month</li>
-          <li>Groq AI (free)</li>
-          <li>Basic nodes</li>
-          <li>Community support</li>
-        </ul>
+        <div class="price-name">Free</div><div class="price-amount">$0</div><div class="price-period">forever</div>
+        <ul class="price-features"><li>5 workflows/month</li><li>Groq AI (free)</li><li>Basic nodes</li><li>Community support</li></ul>
         <button class="price-btn free" onclick="showTool()">Get Started</button>
       </div>
       <div class="price-card featured">
-        <div class="price-name">Creator ⭐</div>
-        <div class="price-amount">$19.99</div>
-        <div class="price-period">per month</div>
-        <ul class="price-features">
-          <li>Unlimited workflows</li>
-          <li>All AI models</li>
-          <li>All nodes</li>
-          <li>Priority support</li>
-        </ul>
+        <div class="price-name">Creator ⭐</div><div class="price-amount">$19.99</div><div class="price-period">per month</div>
+        <ul class="price-features"><li>Unlimited workflows</li><li>All AI models</li><li>All nodes</li><li>Priority support</li></ul>
         <button class="price-btn paid" onclick="window.open('https://xenovia.lemonsqueezy.com/checkout/buy/c47ea5c2-09b3-4f9d-8466-8f012f101e52')">Buy Now</button>
       </div>
       <div class="price-card">
-        <div class="price-name">Agency</div>
-        <div class="price-amount">$49</div>
-        <div class="price-period">per month</div>
-        <ul class="price-features">
-          <li>5 team members</li>
-          <li>Unlimited everything</li>
-          <li>Custom AI models</li>
-          <li>Dedicated support</li>
-        </ul>
+        <div class="price-name">Agency</div><div class="price-amount">$49</div><div class="price-period">per month</div>
+        <ul class="price-features"><li>5 team members</li><li>Unlimited everything</li><li>Custom AI models</li><li>Dedicated support</li></ul>
         <button class="price-btn paid" onclick="window.open('https://xenovia.lemonsqueezy.com/checkout/buy/c47ea5c2-09b3-4f9d-8466-8f012f101e52')">Buy Now</button>
       </div>
     </div>
   </div>
-
   <footer class="footer">
     <div class="footer-logo">XENO<span>VIA</span></div>
     <div class="footer-text">© 2026 Xenovia. Powered by Xeno Core Engine.</div>
   </footer>
 </div>
 
-<!-- TOOL PAGE -->
+<!-- PC TOOL PAGE -->
 <div class="tool-page" id="toolPage">
   <div class="topbar">
-    <div>
-      <div class="logo">XENO<span>VIA</span></div>
-      <div class="engine">XENO CORE ENGINE</div>
-    </div>
+    <div><div class="logo">XENO<span>VIA</span></div><div class="engine">XENO CORE ENGINE</div></div>
     <div class="top-btns">
       <button class="top-btn" onclick="showLanding()">🏠 Home</button>
       <button class="top-btn" onclick="saveWorkflow()">💾 Save</button>
@@ -275,11 +264,10 @@ body { background: #0a0a0a; color: white; font-family: Arial; overflow-x: hidden
       <button class="top-btn purple" onclick="runWorkflow()">⚡ Run Workflow</button>
     </div>
   </div>
-
   <div class="workspace">
     <div class="sidebar">
       <div class="sidebar-title">Nodes</div>
-      <input class="search-box" placeholder="🔍 Search nodes..." oninput="filterNodes(this.value)" />
+      <input class="search-box" placeholder="🔍 Search..." oninput="filterNodes(this.value)"/>
       <div class="node-group">
         <div class="node-group-title">⚡ Triggers</div>
         <div class="node-item" draggable="true" data-type="manual" ondragstart="dragStart(event)"><div class="node-icon icon-trigger">✋</div>Manual Trigger</div>
@@ -314,25 +302,14 @@ body { background: #0a0a0a; color: white; font-family: Arial; overflow-x: hidden
         <div class="node-item" draggable="true" data-type="textformat" ondragstart="dragStart(event)"><div class="node-icon icon-tool">📝</div>Text Formatter</div>
       </div>
     </div>
-
     <div class="canvas" id="canvas" ondrop="drop(event)" ondragover="allowDrop(event)">
       <svg id="connections-svg"></svg>
-      <div class="canvas-empty" id="canvas-empty">
-        <h2>← Drag nodes here to build workflow</h2>
-        <p>Drag a node from the left to get started</p>
-      </div>
+      <div class="canvas-empty" id="canvas-empty"><h2>← Drag nodes here to build workflow</h2><p>Drag a node from the left to get started</p></div>
     </div>
-
     <div class="right-panel">
       <div class="panel-title">My Workflows</div>
-      <div class="workflow-item" onclick="loadTemplate('youtube')">
-        <div class="workflow-item-name"><span class="sdot"></span>YouTube Content</div>
-        <div class="workflow-item-sub">Click to load</div>
-      </div>
-      <div class="workflow-item" onclick="loadTemplate('script')">
-        <div class="workflow-item-name"><span class="sdot"></span>Script Generator</div>
-        <div class="workflow-item-sub">Click to load</div>
-      </div>
+      <div class="workflow-item" onclick="loadTemplate('youtube')"><div class="workflow-item-name"><span class="sdot"></span>YouTube Content</div><div class="workflow-item-sub">Click to load</div></div>
+      <div class="workflow-item" onclick="loadTemplate('script')"><div class="workflow-item-name"><span class="sdot"></span>Script Generator</div><div class="workflow-item-sub">Click to load</div></div>
       <button class="add-btn">+ New Workflow</button>
       <button class="run-btn" id="runBtn" onclick="runWorkflow()">▶ Run Workflow</button>
       <div>
@@ -344,13 +321,9 @@ body { background: #0a0a0a; color: white; font-family: Arial; overflow-x: hidden
           <div><span style="color:#555">●</span> Gmail — Not connected</div>
         </div>
       </div>
-      <div id="log-wrap" style="display:none;">
-        <div class="panel-title" style="margin-bottom:8px;">Run Log</div>
-        <div class="log-box" id="log-box"></div>
-      </div>
+      <div id="log-wrap" style="display:none;"><div class="panel-title" style="margin-bottom:8px;">Run Log</div><div class="log-box" id="log-box"></div></div>
     </div>
   </div>
-
   <div class="bottombar">
     <div class="bottom-item">XENOVIA <span>v0.1</span></div>
     <div class="bottom-item">Xeno Core <span>Active</span></div>
@@ -359,6 +332,43 @@ body { background: #0a0a0a; color: white; font-family: Arial; overflow-x: hidden
   </div>
 </div>
 
+<!-- MOBILE TOOL PAGE -->
+<div class="mobile-tool" id="mobileTool">
+  <div class="mob-topbar">
+    <div class="mob-logo">XENO<span>VIA</span></div>
+    <button class="mob-home-btn" onclick="showLanding()">🏠 Home</button>
+  </div>
+  <div class="mob-workspace">
+    <!-- বাম sidebar -->
+    <div class="mob-sidebar">
+      <div class="mob-sidebar-title">Nodes</div>
+      <button class="mob-node-btn" onclick="mobAdd('manual')"><span class="mob-node-icon">✋</span>Manual</button>
+      <button class="mob-node-btn" onclick="mobAdd('groq')"><span class="mob-node-icon">✦</span>Groq AI</button>
+      <button class="mob-node-btn" onclick="mobAdd('chatgpt')"><span class="mob-node-icon">⬡</span>ChatGPT</button>
+      <button class="mob-node-btn" onclick="mobAdd('claude')"><span class="mob-node-icon">✧</span>Claude</button>
+      <button class="mob-node-btn" onclick="mobAdd('gemini')"><span class="mob-node-icon">◈</span>Gemini</button>
+      <button class="mob-node-btn" onclick="mobAdd('gdocs')"><span class="mob-node-icon">📄</span>Docs</button>
+      <button class="mob-node-btn" onclick="mobAdd('gmail')"><span class="mob-node-icon">📧</span>Gmail</button>
+      <button class="mob-node-btn" onclick="mobAdd('youtube')"><span class="mob-node-icon">📺</span>YouTube</button>
+      <button class="mob-node-btn" onclick="mobAdd('telegram')"><span class="mob-node-icon">✈</span>Telegram</button>
+      <button class="mob-node-btn" onclick="mobAdd('websearch')"><span class="mob-node-icon">🌍</span>Search</button>
+    </div>
+    <!-- canvas -->
+    <div class="mob-canvas" id="mob-canvas">
+      <div class="mob-empty-txt" id="mob-empty">← Tap a node<br>to add it</div>
+    </div>
+  </div>
+  <div class="mob-bottom">
+    <div class="mob-workflows">
+      <button class="mob-wf-btn" onclick="mobTemplate('youtube')">📺 YouTube</button>
+      <button class="mob-wf-btn" onclick="mobTemplate('script')">📝 Script</button>
+    </div>
+    <button class="mob-run-btn" id="mobRunBtn" onclick="mobRun()">⚡ Run Workflow</button>
+    <div class="mob-status" id="mob-status"><span style="color:#22c55e">●</span> Engine Active</div>
+  </div>
+</div>
+
+<!-- Modal -->
 <div class="modal-overlay" id="modal">
   <div class="modal">
     <div class="modal-head">
@@ -373,43 +383,44 @@ body { background: #0a0a0a; color: white; font-family: Arial; overflow-x: hidden
     </div>
   </div>
 </div>
-
 <div class="toast" id="toast"></div>
 
 <script>
+const isMobile = () => window.innerWidth <= 768;
+
 function showTool() {
   document.getElementById('landingPage').style.display = 'none';
-  document.getElementById('toolPage').style.display = 'flex';
-  history.pushState({page:'tool'}, '', '#tool');
+  if (isMobile()) {
+    document.getElementById('mobileTool').style.display = 'flex';
+    document.getElementById('toolPage').style.display = 'none';
+  } else {
+    document.getElementById('toolPage').style.display = 'flex';
+    document.getElementById('mobileTool').style.display = 'none';
+  }
+  history.pushState({}, '', '#tool');
 }
 function showLanding() {
   document.getElementById('toolPage').style.display = 'none';
+  document.getElementById('mobileTool').style.display = 'none';
   document.getElementById('landingPage').style.display = 'flex';
-  history.pushState({page:'landing'}, '', '#');
+  history.pushState({}, '', '#');
 }
-window.onpopstate = function(e) {
-  if (location.hash === '#tool') {
-    document.getElementById('landingPage').style.display = 'none';
-    document.getElementById('toolPage').style.display = 'flex';
-  } else {
-    document.getElementById('toolPage').style.display = 'none';
-    document.getElementById('landingPage').style.display = 'flex';
-  }
-};
+window.onpopstate = () => { if (location.hash === '#tool') showTool(); else showLanding(); };
 
+// ===== PC TOOL =====
 let nodes = [], connections = [], nodeIdCounter = 0, dragData = null, connectingFrom = null;
 
 const CFG = {
   manual:     { name:'Manual Trigger',  cls:'icon-trigger', icon:'✋', fields:[] },
   schedule:   { name:'Schedule',        cls:'icon-trigger', icon:'🕐', fields:[{l:'Every',t:'select',o:['1 hour','6 hours','Daily','Weekly']}] },
   webhook:    { name:'Webhook',         cls:'icon-trigger', icon:'🪝', fields:[{l:'Path',t:'input',p:'/webhook'}] },
-  groq:       { name:'Groq AI',         cls:'icon-ai',      icon:'✦', fields:[{l:'Groq API Key',t:'input',p:'gsk_...'},{l:'Model',t:'select',o:['llama-3.1-8b-instant','llama-3.3-70b-versatile','gemma2-9b-it']},{l:'Prompt',t:'textarea',p:'You are a YouTube content writer for Sleuth Vault channel...'}] },
+  groq:       { name:'Groq AI',         cls:'icon-ai',      icon:'✦', fields:[{l:'Groq API Key',t:'input',p:'gsk_...'},{l:'Model',t:'select',o:['llama-3.1-8b-instant','llama-3.3-70b-versatile','gemma2-9b-it']},{l:'Prompt',t:'textarea',p:'You are a YouTube content writer...'}] },
   chatgpt:    { name:'ChatGPT',         cls:'icon-ai',      icon:'⬡', fields:[{l:'API Key',t:'input',p:'sk-...'},{l:'Prompt',t:'textarea',p:'Your prompt...'}] },
-  claude:     { name:'Claude (Anthropic)', cls:'icon-ai',   icon:'✧', fields:[{l:'API Key',t:'input',p:'sk-ant-...'},{l:'Prompt',t:'textarea',p:'Your prompt...'}] },
+  claude:     { name:'Claude',          cls:'icon-ai',      icon:'✧', fields:[{l:'API Key',t:'input',p:'sk-ant-...'},{l:'Prompt',t:'textarea',p:'Your prompt...'}] },
   gemini:     { name:'Gemini',          cls:'icon-ai',      icon:'◈', fields:[{l:'API Key',t:'input',p:'AIza...'},{l:'Prompt',t:'textarea',p:'Your prompt...'}] },
   perplexity: { name:'Perplexity',      cls:'icon-ai',      icon:'◎', fields:[{l:'API Key',t:'input',p:'pplx-...'},{l:'Prompt',t:'textarea',p:'Your prompt...'}] },
   gdocs:      { name:'Google Docs',     cls:'icon-google',  icon:'📄', fields:[{l:'Document Name',t:'input',p:'My Script'}] },
-  gmail:      { name:'Gmail',           cls:'icon-google',  icon:'📧', fields:[{l:'To Email',t:'input',p:'you@gmail.com'},{l:'Subject',t:'input',p:'New Script Ready!'}] },
+  gmail:      { name:'Gmail',           cls:'icon-google',  icon:'📧', fields:[{l:'To Email',t:'input',p:'you@gmail.com'},{l:'Subject',t:'input',p:'New Script!'}] },
   youtube:    { name:'YouTube',         cls:'icon-google',  icon:'📺', fields:[{l:'Action',t:'select',o:['Search Keywords','Get Trending']}] },
   gsheets:    { name:'Google Sheets',   cls:'icon-google',  icon:'📊', fields:[{l:'Sheet Name',t:'input',p:'My Sheet'}] },
   telegram:   { name:'Telegram',        cls:'icon-social',  icon:'✈', fields:[{l:'Bot Token',t:'input',p:'123:ABC...'},{l:'Chat ID',t:'input',p:'-100...'}] },
@@ -432,162 +443,221 @@ function drop(e) {
 
 function addNode(type, x, y) {
   const id = ++nodeIdCounter;
-  const c = CFG[type] || { name: type, cls:'icon-tool', icon:'⚙', fields:[] };
+  const c = CFG[type] || { name:type, cls:'icon-tool', icon:'⚙', fields:[] };
   const el = document.createElement('div');
-  el.className = 'canvas-node';
-  el.id = 'node-' + id;
-  el.style.left = Math.max(10, x) + 'px';
-  el.style.top = Math.max(10, y) + 'px';
-  const fieldsHTML = c.fields.map(f => {
-    if (f.t === 'select') return `<div class="node-field"><label>${f.l}</label><select>${f.o.map(o=>`<option value="${o}">${o}</option>`).join('')}</select></div>`;
-    if (f.t === 'textarea') return `<div class="node-field"><label>${f.l}</label><textarea placeholder="${f.p||''}"></textarea></div>`;
+  el.className = 'canvas-node'; el.id = 'node-'+id;
+  el.style.left = Math.max(10,x)+'px'; el.style.top = Math.max(10,y)+'px';
+  const fHTML = c.fields.map(f => {
+    if (f.t==='select') return `<div class="node-field"><label>${f.l}</label><select>${f.o.map(o=>`<option>${o}</option>`).join('')}</select></div>`;
+    if (f.t==='textarea') return `<div class="node-field"><label>${f.l}</label><textarea placeholder="${f.p||''}"></textarea></div>`;
     return `<div class="node-field"><label>${f.l}</label><input type="text" placeholder="${f.p||''}"></div>`;
   }).join('');
   el.innerHTML = `
     <div class="port port-in" onmousedown="startConnect(event,${id},'in')"></div>
     <div class="node-header"><div class="node-header-icon ${c.cls}">${c.icon}</div><div class="node-header-name">${c.name}</div><button class="node-delete" onclick="deleteNode(${id})">×</button></div>
-    <div class="node-body">${fieldsHTML}<div class="node-output" id="out-${id}"></div></div>
+    <div class="node-body">${fHTML}<div class="node-output" id="out-${id}"></div></div>
     <div class="port port-out" onmousedown="startConnect(event,${id},'out')"></div>
   `;
   el.addEventListener('mousedown', ev => {
-    if (['INPUT','TEXTAREA','SELECT','BUTTON'].includes(ev.target.tagName) || ev.target.classList.contains('port')) return;
-    startDragNode(ev, id);
+    if (['INPUT','TEXTAREA','SELECT','BUTTON'].includes(ev.target.tagName)||ev.target.classList.contains('port')) return;
+    startDragNode(ev,id);
   });
   document.getElementById('canvas').appendChild(el);
   document.getElementById('canvas-empty').style.opacity = '0';
-  nodes.push({ id, type });
-  updateCount();
-  if (type === 'groq') document.getElementById('ai-status').innerHTML = '<span style="color:#22c55e">●</span> Groq AI — Connected';
+  nodes.push({id,type}); updateCount();
+  if (type==='groq') document.getElementById('ai-status').innerHTML = '<span style="color:#22c55e">●</span> Groq AI — Connected';
 }
 
-function startDragNode(e, id) {
+function startDragNode(e,id) {
   e.preventDefault();
-  const el = document.getElementById('node-' + id);
+  const el = document.getElementById('node-'+id);
   const cv = document.getElementById('canvas').getBoundingClientRect();
-  const ox = e.clientX - el.getBoundingClientRect().left;
-  const oy = e.clientY - el.getBoundingClientRect().top;
-  const mv = e => { el.style.left = Math.max(0, e.clientX - cv.left - ox) + 'px'; el.style.top = Math.max(0, e.clientY - cv.top - oy) + 'px'; drawConnections(); };
-  const up = () => { document.removeEventListener('mousemove', mv); document.removeEventListener('mouseup', up); };
-  document.addEventListener('mousemove', mv);
-  document.addEventListener('mouseup', up);
+  const ox = e.clientX-el.getBoundingClientRect().left, oy = e.clientY-el.getBoundingClientRect().top;
+  const mv = e => { el.style.left=Math.max(0,e.clientX-cv.left-ox)+'px'; el.style.top=Math.max(0,e.clientY-cv.top-oy)+'px'; drawConnections(); };
+  const up = () => { document.removeEventListener('mousemove',mv); document.removeEventListener('mouseup',up); };
+  document.addEventListener('mousemove',mv); document.addEventListener('mouseup',up);
 }
 
-function startConnect(e, id, side) {
+function startConnect(e,id,side) {
   e.stopPropagation();
-  if (side === 'out') { connectingFrom = id; showToast('Click the left port of another node to connect'); }
-  else if (side === 'in' && connectingFrom !== null && connectingFrom !== id) {
-    connections.push({ from: connectingFrom, to: id, active: false });
-    connectingFrom = null; drawConnections(); updateCount(); showToast('✅ Connected!');
+  if (side==='out') { connectingFrom=id; showToast('Click the left port of another node'); }
+  else if (side==='in'&&connectingFrom!==null&&connectingFrom!==id) {
+    connections.push({from:connectingFrom,to:id,active:false});
+    connectingFrom=null; drawConnections(); updateCount(); showToast('✅ Connected!');
   }
 }
 
 function drawConnections() {
-  const svg = document.getElementById('connections-svg');
-  svg.innerHTML = '';
+  const svg = document.getElementById('connections-svg'); svg.innerHTML='';
   const cv = document.getElementById('canvas').getBoundingClientRect();
   connections.forEach(c => {
-    const fe = document.getElementById('node-'+c.from);
-    const te = document.getElementById('node-'+c.to);
-    if (!fe || !te) return;
-    const fp = fe.querySelector('.port-out').getBoundingClientRect();
-    const tp = te.querySelector('.port-in').getBoundingClientRect();
-    const x1=fp.left+6-cv.left, y1=fp.top+6-cv.top, x2=tp.left+6-cv.left, y2=tp.top+6-cv.top, mx=(x1+x2)/2;
-    const p = document.createElementNS('http://www.w3.org/2000/svg','path');
-    p.setAttribute('d', `M${x1},${y1} C${mx},${y1} ${mx},${y2} ${x2},${y2}`);
-    p.setAttribute('class', 'connection-line' + (c.active ? ' active' : ''));
+    const fe=document.getElementById('node-'+c.from), te=document.getElementById('node-'+c.to);
+    if (!fe||!te) return;
+    const fp=fe.querySelector('.port-out').getBoundingClientRect(), tp=te.querySelector('.port-in').getBoundingClientRect();
+    const x1=fp.left+6-cv.left,y1=fp.top+6-cv.top,x2=tp.left+6-cv.left,y2=tp.top+6-cv.top,mx=(x1+x2)/2;
+    const p=document.createElementNS('http://www.w3.org/2000/svg','path');
+    p.setAttribute('d',`M${x1},${y1} C${mx},${y1} ${mx},${y2} ${x2},${y2}`);
+    p.setAttribute('class','connection-line'+(c.active?' active':''));
     svg.appendChild(p);
   });
 }
 
 function deleteNode(id) {
   document.getElementById('node-'+id)?.remove();
-  nodes = nodes.filter(n => n.id !== id);
-  connections = connections.filter(c => c.from !== id && c.to !== id);
+  nodes=nodes.filter(n=>n.id!==id); connections=connections.filter(c=>c.from!==id&&c.to!==id);
   drawConnections(); updateCount();
-  if (!nodes.length) document.getElementById('canvas-empty').style.opacity = '1';
+  if (!nodes.length) document.getElementById('canvas-empty').style.opacity='1';
 }
 
 function clearCanvas() {
-  nodes.forEach(n => document.getElementById('node-'+n.id)?.remove());
-  nodes = []; connections = [];
-  document.getElementById('connections-svg').innerHTML = '';
-  document.getElementById('canvas-empty').style.opacity = '1';
-  document.getElementById('log-wrap').style.display = 'none';
-  updateCount();
+  nodes.forEach(n=>document.getElementById('node-'+n.id)?.remove());
+  nodes=[]; connections=[]; document.getElementById('connections-svg').innerHTML='';
+  document.getElementById('canvas-empty').style.opacity='1';
+  document.getElementById('log-wrap').style.display='none'; updateCount();
 }
 
 async function runWorkflow() {
-  if (!nodes.length) { showToast('⚠️ No nodes added!'); return; }
-  const btn = document.getElementById('runBtn');
-  btn.disabled = true; btn.textContent = '⏳ Running...';
-  const lw = document.getElementById('log-wrap');
-  const lb = document.getElementById('log-box');
-  lw.style.display = 'block'; lb.innerHTML = '';
-  nodes.forEach(n => { document.getElementById('node-'+n.id).classList.remove('done','error','running'); });
-  connections.forEach(c => c.active = false);
-  let aiResult = '';
+  if (!nodes.length) { showToast('⚠️ No nodes!'); return; }
+  const btn=document.getElementById('runBtn'); btn.disabled=true; btn.textContent='⏳ Running...';
+  const lw=document.getElementById('log-wrap'), lb=document.getElementById('log-box');
+  lw.style.display='block'; lb.innerHTML='';
+  nodes.forEach(n=>document.getElementById('node-'+n.id).classList.remove('done','error','running'));
+  connections.forEach(c=>c.active=false);
+  let aiResult='';
   for (const node of nodes) {
-    const el = document.getElementById('node-'+node.id);
-    el.classList.add('running');
-    addLog(`⟳ Running ${CFG[node.type]?.name || node.type}...`);
-    await sleep(600);
-    if (node.type === 'groq') {
-      const inputs = el.querySelectorAll('input, textarea, select');
-      const apiKey = inputs[0]?.value?.trim();
-      const model = inputs[1]?.value?.trim() || 'llama-3.1-8b-instant';
-      const prompt = inputs[2]?.value?.trim();
-      if (!apiKey || !prompt) { el.classList.remove('running'); el.classList.add('error'); addLog('❌ Add API Key and Prompt!'); showToast('❌ Add API Key and Prompt!'); btn.disabled = false; btn.textContent = '▶ Run Workflow'; return; }
+    const el=document.getElementById('node-'+node.id);
+    el.classList.add('running'); addLog(`⟳ Running ${CFG[node.type]?.name||node.type}...`); await sleep(600);
+    if (node.type==='groq') {
+      const inputs=el.querySelectorAll('input,textarea,select');
+      const apiKey=inputs[0]?.value?.trim(), model=inputs[1]?.value?.trim()||'llama-3.1-8b-instant', prompt=inputs[2]?.value?.trim();
+      if (!apiKey||!prompt) { el.classList.remove('running'); el.classList.add('error'); addLog('❌ Add API Key and Prompt!'); showToast('❌ Add API Key and Prompt!'); btn.disabled=false; btn.textContent='▶ Run Workflow'; return; }
       try {
         addLog('🤖 AI working...');
-        const res = await fetch('https://api.groq.com/openai/v1/chat/completions', {
-          method: 'POST',
-          headers: { 'Authorization': 'Bearer ' + apiKey, 'Content-Type': 'application/json' },
-          body: JSON.stringify({ model, messages: [{ role: 'user', content: prompt }], temperature: 0.7 })
-        });
-        const data = await res.json();
-        if (!res.ok) throw new Error(data.error?.message || 'API Error');
-        aiResult = data.choices?.[0]?.message?.content || '';
-        const outEl = document.getElementById('out-'+node.id);
-        outEl.style.display = 'block';
-        outEl.textContent = aiResult.substring(0, 120) + '...';
+        const res=await fetch('https://api.groq.com/openai/v1/chat/completions',{method:'POST',headers:{'Authorization':'Bearer '+apiKey,'Content-Type':'application/json'},body:JSON.stringify({model,messages:[{role:'user',content:prompt}],temperature:0.7})});
+        const data=await res.json();
+        if (!res.ok) throw new Error(data.error?.message||'API Error');
+        aiResult=data.choices?.[0]?.message?.content||'';
+        const outEl=document.getElementById('out-'+node.id); outEl.style.display='block'; outEl.textContent=aiResult.substring(0,120)+'...';
         el.classList.remove('running'); el.classList.add('done');
-        connections.forEach(c => { if (c.from === node.id) c.active = true; });
-        drawConnections(); addLog('✅ AI output received!');
-      } catch(err) { el.classList.remove('running'); el.classList.add('error'); addLog('❌ ' + err.message); showToast('❌ ' + err.message); btn.disabled = false; btn.textContent = '▶ Run Workflow'; return; }
-    } else { el.classList.remove('running'); el.classList.add('done'); addLog('✅ ' + (CFG[node.type]?.name || node.type) + ' — Done'); }
+        connections.forEach(c=>{if(c.from===node.id)c.active=true;}); drawConnections(); addLog('✅ AI output received!');
+      } catch(err) { el.classList.remove('running'); el.classList.add('error'); addLog('❌ '+err.message); showToast('❌ '+err.message); btn.disabled=false; btn.textContent='▶ Run Workflow'; return; }
+    } else { el.classList.remove('running'); el.classList.add('done'); addLog('✅ '+(CFG[node.type]?.name||node.type)+' — Done'); }
   }
-  btn.disabled = false; btn.textContent = '▶ Run Workflow';
-  if (aiResult) { document.getElementById('modal-content').textContent = aiResult; document.getElementById('modal').classList.add('show'); }
-  else { showToast('✅ Workflow complete!'); }
+  btn.disabled=false; btn.textContent='▶ Run Workflow';
+  if (aiResult) { document.getElementById('modal-content').textContent=aiResult; document.getElementById('modal').classList.add('show'); }
+  else showToast('✅ Workflow complete!');
 }
 
-function addLog(msg) { const lb = document.getElementById('log-box'); lb.innerHTML += `<div>${msg}</div>`; lb.scrollTop = lb.scrollHeight; }
-
+function addLog(msg) { const lb=document.getElementById('log-box'); lb.innerHTML+=`<div>${msg}</div>`; lb.scrollTop=lb.scrollHeight; }
 function loadTemplate(type) {
   clearCanvas();
-  if (type === 'youtube') {
-    addNode('manual', 60, 160);
-    setTimeout(() => addNode('groq', 320, 130), 150);
-    setTimeout(() => addNode('gdocs', 590, 80), 300);
-    setTimeout(() => addNode('gmail', 590, 240), 450);
-    setTimeout(() => { connections = [{from:1,to:2,active:false},{from:2,to:3,active:false},{from:2,to:4,active:false}]; nodeIdCounter = 4; drawConnections(); updateCount(); }, 600);
-  } else {
-    addNode('schedule', 60, 160);
-    setTimeout(() => addNode('websearch', 300, 130), 150);
-    setTimeout(() => addNode('groq', 550, 130), 300);
-    setTimeout(() => addNode('gdocs', 800, 130), 450);
-    setTimeout(() => { connections = [{from:1,to:2,active:false},{from:2,to:3,active:false},{from:3,to:4,active:false}]; nodeIdCounter = 4; drawConnections(); updateCount(); }, 600);
-  }
+  if (type==='youtube') { addNode('manual',60,160); setTimeout(()=>addNode('groq',320,130),150); setTimeout(()=>addNode('gdocs',590,80),300); setTimeout(()=>addNode('gmail',590,240),450); setTimeout(()=>{connections=[{from:1,to:2,active:false},{from:2,to:3,active:false},{from:2,to:4,active:false}];nodeIdCounter=4;drawConnections();updateCount();},600); }
+  else { addNode('schedule',60,160); setTimeout(()=>addNode('websearch',300,130),150); setTimeout(()=>addNode('groq',550,130),300); setTimeout(()=>addNode('gdocs',800,130),450); setTimeout(()=>{connections=[{from:1,to:2,active:false},{from:2,to:3,active:false},{from:3,to:4,active:false}];nodeIdCounter=4;drawConnections();updateCount();},600); }
   showToast('✅ Template loaded!');
+}
+function updateCount() { document.getElementById('node-count').textContent=nodes.length; document.getElementById('conn-count').textContent=connections.length; }
+function filterNodes(q) { document.querySelectorAll('.node-item').forEach(i=>{i.style.display=i.textContent.toLowerCase().includes(q.toLowerCase())?'':'none';}); }
+function saveWorkflow() { showToast('💾 Saved!'); }
+
+// ===== MOBILE TOOL =====
+let mobNodes = [], mobCounter = 0;
+
+function mobAdd(type) {
+  const c = CFG[type]||{name:type,icon:'⚙',fields:[]};
+  const id = ++mobCounter;
+  mobNodes.push({id,type});
+  const canvas = document.getElementById('mob-canvas');
+  document.getElementById('mob-empty').style.display = 'none';
+
+  const card = document.createElement('div');
+  card.className = 'mob-card'; card.id = 'mob-card-'+id;
+  const posX = 10 + ((mobNodes.length-1)%2)*210;
+  const posY = 10 + Math.floor((mobNodes.length-1)/2)*180;
+  card.style.left = posX+'px'; card.style.top = posY+'px';
+
+  const fHTML = c.fields.map(f=>{
+    if (f.t==='select') return `<div class="mob-field"><label>${f.l}</label><select>${f.o.map(o=>`<option>${o}</option>`).join('')}</select></div>`;
+    if (f.t==='textarea') return `<div class="mob-field"><label>${f.l}</label><textarea placeholder="${f.p||''}"></textarea></div>`;
+    return `<div class="mob-field"><label>${f.l}</label><input type="text" placeholder="${f.p||''}"></div>`;
+  }).join('');
+
+  card.innerHTML = `
+    <div class="mob-card-head">
+      <div class="mob-card-title">${c.icon} ${c.name}</div>
+      <button class="mob-card-del" onclick="mobDel(${id})">×</button>
+    </div>
+    <div class="mob-card-body">${fHTML}<div class="mob-out" id="mob-out-${id}"></div></div>
+  `;
+
+  // Touch drag
+  const head = card.querySelector('.mob-card-head');
+  head.addEventListener('touchstart', e => {
+    e.preventDefault();
+    const cr = canvas.getBoundingClientRect();
+    const t = e.touches[0];
+    const ox = t.clientX - card.getBoundingClientRect().left;
+    const oy = t.clientY - card.getBoundingClientRect().top;
+    const mv = e => {
+      e.preventDefault();
+      const t = e.touches[0];
+      const nx = Math.max(0,Math.min(t.clientX-cr.left-ox, cr.width-card.offsetWidth));
+      const ny = Math.max(0,Math.min(t.clientY-cr.top-oy, cr.height-card.offsetHeight));
+      card.style.left=nx+'px'; card.style.top=ny+'px';
+    };
+    const up = () => { document.removeEventListener('touchmove',mv); document.removeEventListener('touchend',up); };
+    document.addEventListener('touchmove',mv,{passive:false}); document.addEventListener('touchend',up);
+  },{passive:false});
+
+  canvas.appendChild(card);
+  if (type==='groq') document.getElementById('mob-status').innerHTML='<span style="color:#22c55e">●</span> Engine Active &nbsp;<span style="color:#22c55e">●</span> Groq Connected';
+  showToast(`✅ ${c.name} added!`);
+}
+
+function mobDel(id) {
+  document.getElementById('mob-card-'+id)?.remove();
+  mobNodes=mobNodes.filter(n=>n.id!==id);
+  if (!mobNodes.length) document.getElementById('mob-empty').style.display='block';
+}
+
+function mobTemplate(type) {
+  mobNodes=[]; mobCounter=0;
+  document.querySelectorAll('.mob-card').forEach(c=>c.remove());
+  document.getElementById('mob-empty').style.display='block';
+  const types = type==='youtube' ? ['manual','groq','gdocs','gmail'] : ['schedule','websearch','groq','gdocs'];
+  types.forEach((t,i)=>setTimeout(()=>mobAdd(t),i*200));
+  showToast('✅ Template loaded!');
+}
+
+async function mobRun() {
+  if (!mobNodes.length) { showToast('⚠️ Add nodes first!'); return; }
+  const btn=document.getElementById('mobRunBtn'); btn.disabled=true; btn.textContent='⏳ Running...';
+  let aiResult='';
+  for (const node of mobNodes) {
+    const card=document.getElementById('mob-card-'+node.id); if (!card) continue;
+    card.className='mob-card running'; await sleep(500);
+    if (node.type==='groq') {
+      const inputs=card.querySelectorAll('input,textarea,select');
+      const apiKey=inputs[0]?.value?.trim(), model=inputs[1]?.value?.trim()||'llama-3.1-8b-instant', prompt=inputs[2]?.value?.trim();
+      if (!apiKey||!prompt) { card.className='mob-card error'; showToast('❌ Add API Key and Prompt!'); btn.disabled=false; btn.textContent='⚡ Run Workflow'; return; }
+      try {
+        const res=await fetch('https://api.groq.com/openai/v1/chat/completions',{method:'POST',headers:{'Authorization':'Bearer '+apiKey,'Content-Type':'application/json'},body:JSON.stringify({model,messages:[{role:'user',content:prompt}],temperature:0.7})});
+        const data=await res.json();
+        if (!res.ok) throw new Error(data.error?.message||'API Error');
+        aiResult=data.choices?.[0]?.message?.content||'';
+        const out=document.getElementById('mob-out-'+node.id); out.style.display='block'; out.textContent=aiResult.substring(0,150)+'...';
+        card.className='mob-card done';
+      } catch(err) { card.className='mob-card error'; showToast('❌ '+err.message); btn.disabled=false; btn.textContent='⚡ Run Workflow'; return; }
+    } else { card.className='mob-card done'; }
+  }
+  btn.disabled=false; btn.textContent='⚡ Run Workflow';
+  if (aiResult) { document.getElementById('modal-content').textContent=aiResult; document.getElementById('modal').classList.add('show'); }
+  else showToast('✅ Workflow complete!');
 }
 
 function closeModal() { document.getElementById('modal').classList.remove('show'); }
 function copyOutput() { navigator.clipboard.writeText(document.getElementById('modal-content').textContent); showToast('📋 Copied!'); }
-function saveWorkflow() { showToast('💾 Saved!'); }
-function updateCount() { document.getElementById('node-count').textContent = nodes.length; document.getElementById('conn-count').textContent = connections.length; }
-function filterNodes(q) { document.querySelectorAll('.node-item').forEach(i => { i.style.display = i.textContent.toLowerCase().includes(q.toLowerCase()) ? '' : 'none'; }); }
-function showToast(msg) { const t = document.getElementById('toast'); t.textContent = msg; t.classList.add('show'); setTimeout(() => t.classList.remove('show'), 2500); }
-function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
+function showToast(msg) { const t=document.getElementById('toast'); t.textContent=msg; t.classList.add('show'); setTimeout(()=>t.classList.remove('show'),2500); }
+function sleep(ms) { return new Promise(r=>setTimeout(r,ms)); }
 </script>
 </body>
 </html>
