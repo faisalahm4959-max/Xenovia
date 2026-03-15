@@ -370,11 +370,22 @@ body { background: #0a0a0a; color: white; font-family: Arial; overflow-x: hidden
 function showTool() {
   document.getElementById('landingPage').style.display = 'none';
   document.getElementById('toolPage').style.display = 'flex';
+  history.pushState({page: 'tool'}, '', '#tool');
 }
 function showLanding() {
   document.getElementById('toolPage').style.display = 'none';
   document.getElementById('landingPage').style.display = 'flex';
+  history.pushState({page: 'landing'}, '', '#');
 }
+window.onpopstate = function(e) {
+  if (location.hash === '#tool') {
+    document.getElementById('landingPage').style.display = 'none';
+    document.getElementById('toolPage').style.display = 'flex';
+  } else {
+    document.getElementById('toolPage').style.display = 'none';
+    document.getElementById('landingPage').style.display = 'flex';
+  }
+};
 
 let nodes = [], connections = [], nodeIdCounter = 0, dragData = null, connectingFrom = null;
 
