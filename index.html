@@ -5,8 +5,6 @@
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body { background: #0a0a0a; color: white; font-family: Arial; overflow-x: hidden; }
-
-/* LANDING PAGE */
 .landing { min-height: 100vh; display: flex; flex-direction: column; }
 .nav { padding: 20px 60px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #1a1a1a; }
 .nav-logo { font-size: 24px; font-weight: bold; letter-spacing: 4px; }
@@ -16,8 +14,7 @@ body { background: #0a0a0a; color: white; font-family: Arial; overflow-x: hidden
 .nav-btn:hover { border-color: #7c3aed; color: white; }
 .nav-btn.primary { background: #7c3aed; border-color: #7c3aed; color: white; }
 .nav-btn.primary:hover { background: #6d28d9; }
-
-.hero { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 80px 40px; position: relative; }
+.hero { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 80px 40px; }
 .hero-badge { background: rgba(124,58,237,0.15); border: 1px solid rgba(124,58,237,0.3); color: #a78bfa; font-size: 12px; padding: 6px 16px; border-radius: 20px; margin-bottom: 24px; letter-spacing: 1px; }
 .hero h1 { font-size: 64px; font-weight: bold; line-height: 1.1; margin-bottom: 20px; max-width: 800px; }
 .hero h1 span { color: #7c3aed; }
@@ -27,7 +24,6 @@ body { background: #0a0a0a; color: white; font-family: Arial; overflow-x: hidden
 .btn-primary:hover { background: #6d28d9; transform: translateY(-1px); }
 .btn-secondary { background: none; color: white; border: 1px solid #333; padding: 16px 36px; border-radius: 8px; font-size: 16px; cursor: pointer; font-family: Arial; transition: all 0.15s; }
 .btn-secondary:hover { border-color: #7c3aed; }
-
 .features { padding: 80px 60px; background: #0d0d0d; }
 .features h2 { text-align: center; font-size: 36px; margin-bottom: 48px; }
 .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 1000px; margin: 0 auto; }
@@ -36,7 +32,6 @@ body { background: #0a0a0a; color: white; font-family: Arial; overflow-x: hidden
 .feature-icon { font-size: 32px; margin-bottom: 16px; }
 .feature-title { font-size: 16px; font-weight: bold; margin-bottom: 8px; }
 .feature-desc { font-size: 13px; color: #666; line-height: 1.6; }
-
 .pricing { padding: 80px 60px; }
 .pricing h2 { text-align: center; font-size: 36px; margin-bottom: 48px; }
 .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 900px; margin: 0 auto; }
@@ -54,13 +49,10 @@ body { background: #0a0a0a; color: white; font-family: Arial; overflow-x: hidden
 .price-btn.free:hover { border-color: #7c3aed; color: white; }
 .price-btn.paid { background: #7c3aed; border: none; color: white; }
 .price-btn.paid:hover { background: #6d28d9; }
-
 .footer { padding: 40px 60px; border-top: 1px solid #1a1a1a; display: flex; align-items: center; justify-content: space-between; }
 .footer-logo { font-size: 18px; font-weight: bold; letter-spacing: 3px; }
 .footer-logo span { color: #7c3aed; }
 .footer-text { font-size: 12px; color: #444; }
-
-/* TOOL PAGE */
 .tool-page { display: none; height: 100vh; flex-direction: column; }
 .topbar { background: #111; border-bottom: 1px solid #222; padding: 0 20px; height: 52px; display: flex; align-items: center; justify-content: space-between; flex-shrink: 0; }
 .logo { font-size: 22px; font-weight: bold; letter-spacing: 4px; }
@@ -145,11 +137,12 @@ body { background: #0a0a0a; color: white; font-family: Arial; overflow-x: hidden
 .modal-foot { padding: 14px 20px; border-top: 1px solid #222; display: flex; gap: 10px; justify-content: flex-end; }
 .modal-btn { background: #1a1a1a; border: 1px solid #333; color: #aaa; padding: 8px 18px; border-radius: 6px; cursor: pointer; font-size: 13px; }
 .modal-btn.green { background: #14532d; border-color: #22c55e44; color: #22c55e; }
+.modal-btn:hover { border-color: #7c3aed; color: white; }
 </style>
 </head>
 <body>
 
-<!-- ===== LANDING PAGE ===== -->
+<!-- LANDING PAGE -->
 <div class="landing" id="landingPage">
   <nav class="nav">
     <div class="nav-logo">XENO<span>VIA</span></div>
@@ -162,7 +155,7 @@ body { background: #0a0a0a; color: white; font-family: Arial; overflow-x: hidden
   <div class="hero">
     <div class="hero-badge">✦ Powered by Xeno Core AI Engine</div>
     <h1>Automate Your <span>YouTube Channel</span> with AI</h1>
-    <p>Script, titles, tags, description — সব এক click এ। Drag-drop করে AI workflow বানাও।</p>
+    <p>Script, titles, tags, description — all in <strong>ONE CLICK.</strong> Build AI workflows with drag and drop.</p>
     <div class="hero-btns">
       <button class="btn-primary" onclick="showTool()">⚡ Start Free — No credit card</button>
       <button class="btn-secondary" onclick="showTool()">▶ Watch Demo</button>
@@ -175,32 +168,32 @@ body { background: #0a0a0a; color: white; font-family: Arial; overflow-x: hidden
       <div class="feature-card">
         <div class="feature-icon">🤖</div>
         <div class="feature-title">AI Script Writer</div>
-        <div class="feature-desc">Claude, ChatGPT, Gemini — যেকোনো AI দিয়ে script লেখাও এক click এ।</div>
+        <div class="feature-desc">Write scripts with Claude, ChatGPT, or Gemini in one click.</div>
       </div>
       <div class="feature-card">
         <div class="feature-icon">🎯</div>
         <div class="feature-title">SEO Optimizer</div>
-        <div class="feature-desc">Auto keyword research, tags, description — YouTube এ rank করো।</div>
+        <div class="feature-desc">Auto keyword research, tags, description — rank on YouTube.</div>
       </div>
       <div class="feature-card">
         <div class="feature-icon">🔄</div>
         <div class="feature-title">Drag-Drop Workflow</div>
-        <div class="feature-desc">n8n এর মতো drag-drop করে automation বানাও — কোডিং লাগে না।</div>
+        <div class="feature-desc">Build powerful automations with drag-drop — no coding needed.</div>
       </div>
       <div class="feature-card">
         <div class="feature-icon">📧</div>
         <div class="feature-title">Auto Send</div>
-        <div class="feature-desc">Gmail, Telegram, Discord — AI output সরাসরি পাঠিয়ে দাও।</div>
+        <div class="feature-desc">Send AI output directly to Gmail, Telegram, or Discord.</div>
       </div>
       <div class="feature-card">
         <div class="feature-icon">📄</div>
         <div class="feature-title">Google Docs Save</div>
-        <div class="feature-desc">Script automatically Google Docs এ সেভ হবে।</div>
+        <div class="feature-desc">Scripts automatically saved to Google Docs.</div>
       </div>
       <div class="feature-card">
         <div class="feature-icon">⚡</div>
         <div class="feature-title">Xeno Core Engine</div>
-        <div class="feature-desc">Fast, reliable AI engine — প্রতিদিন হাজারো workflow চালাও।</div>
+        <div class="feature-desc">Fast, reliable AI engine — run thousands of workflows daily.</div>
       </div>
     </div>
   </div>
@@ -213,7 +206,7 @@ body { background: #0a0a0a; color: white; font-family: Arial; overflow-x: hidden
         <div class="price-amount">$0</div>
         <div class="price-period">forever</div>
         <ul class="price-features">
-          <li>৫টা workflow/মাস</li>
+          <li>5 workflows/month</li>
           <li>Groq AI (free)</li>
           <li>Basic nodes</li>
           <li>Community support</li>
@@ -253,7 +246,7 @@ body { background: #0a0a0a; color: white; font-family: Arial; overflow-x: hidden
   </footer>
 </div>
 
-<!-- ===== TOOL PAGE ===== -->
+<!-- TOOL PAGE -->
 <div class="tool-page" id="toolPage">
   <div class="topbar">
     <div>
@@ -308,7 +301,7 @@ body { background: #0a0a0a; color: white; font-family: Arial; overflow-x: hidden
       <svg id="connections-svg"></svg>
       <div class="canvas-empty" id="canvas-empty">
         <h2>← Drag nodes here to build workflow</h2>
-        <p>বাম থেকে node টেনে এনে workflow বানাও</p>
+        <p>Drag a node from the left to get started</p>
       </div>
     </div>
 
@@ -348,7 +341,6 @@ body { background: #0a0a0a; color: white; font-family: Arial; overflow-x: hidden
   </div>
 </div>
 
-<!-- Modal -->
 <div class="modal-overlay" id="modal">
   <div class="modal">
     <div class="modal-head">
@@ -370,12 +362,12 @@ body { background: #0a0a0a; color: white; font-family: Arial; overflow-x: hidden
 function showTool() {
   document.getElementById('landingPage').style.display = 'none';
   document.getElementById('toolPage').style.display = 'flex';
-  history.pushState({page: 'tool'}, '', '#tool');
+  history.pushState({page:'tool'}, '', '#tool');
 }
 function showLanding() {
   document.getElementById('toolPage').style.display = 'none';
   document.getElementById('landingPage').style.display = 'flex';
-  history.pushState({page: 'landing'}, '', '#');
+  history.pushState({page:'landing'}, '', '#');
 }
 window.onpopstate = function(e) {
   if (location.hash === '#tool') {
@@ -393,7 +385,7 @@ const CFG = {
   manual:     { name:'Manual Trigger',  cls:'icon-trigger', icon:'✋', fields:[] },
   schedule:   { name:'Schedule',        cls:'icon-trigger', icon:'🕐', fields:[{l:'Every',t:'select',o:['1 hour','6 hours','Daily','Weekly']}] },
   webhook:    { name:'Webhook',         cls:'icon-trigger', icon:'🪝', fields:[{l:'Path',t:'input',p:'/webhook'}] },
-  groq:       { name:'Groq AI',         cls:'icon-ai',      icon:'✦', fields:[{l:'Groq API Key',t:'input',p:'gsk_...'},{l:'Model',t:'select',o:['llama-3.1-8b-instant','llama-3.3-70b-versatile','gemma2-9b-it']},{l:'Prompt',t:'textarea',p:'তুমি Sleuth Vault YouTube চ্যানেলের কনটেন্ট রাইটার...'}] },
+  groq:       { name:'Groq AI',         cls:'icon-ai',      icon:'✦', fields:[{l:'Groq API Key',t:'input',p:'gsk_...'},{l:'Model',t:'select',o:['llama-3.1-8b-instant','llama-3.3-70b-versatile','gemma2-9b-it']},{l:'Prompt',t:'textarea',p:'You are a YouTube content writer for Sleuth Vault channel...'}] },
   chatgpt:    { name:'ChatGPT',         cls:'icon-ai',      icon:'⬡', fields:[{l:'API Key',t:'input',p:'sk-...'},{l:'Prompt',t:'textarea',p:'Your prompt...'}] },
   gdocs:      { name:'Google Docs',     cls:'icon-google',  icon:'📄', fields:[{l:'Document Name',t:'input',p:'My Script'}] },
   gmail:      { name:'Gmail',           cls:'icon-google',  icon:'📧', fields:[{l:'To Email',t:'input',p:'you@gmail.com'},{l:'Subject',t:'input',p:'New Script Ready!'}] },
@@ -461,7 +453,7 @@ function startDragNode(e, id) {
 
 function startConnect(e, id, side) {
   e.stopPropagation();
-  if (side === 'out') { connectingFrom = id; showToast('এখন অন্য node এর বাম পোর্টে ক্লিক করো'); }
+  if (side === 'out') { connectingFrom = id; showToast('Click the left port of another node to connect'); }
   else if (side === 'in' && connectingFrom !== null && connectingFrom !== id) {
     connections.push({ from: connectingFrom, to: id, active: false });
     connectingFrom = null; drawConnections(); updateCount(); showToast('✅ Connected!');
@@ -504,7 +496,7 @@ function clearCanvas() {
 }
 
 async function runWorkflow() {
-  if (!nodes.length) { showToast('⚠️ কোনো node নেই!'); return; }
+  if (!nodes.length) { showToast('⚠️ No nodes added!'); return; }
   const btn = document.getElementById('runBtn');
   btn.disabled = true; btn.textContent = '⏳ Running...';
   const lw = document.getElementById('log-wrap');
@@ -516,16 +508,16 @@ async function runWorkflow() {
   for (const node of nodes) {
     const el = document.getElementById('node-'+node.id);
     el.classList.add('running');
-    addLog(`⟳ ${CFG[node.type]?.name || node.type} চলছে...`);
+    addLog(`⟳ Running ${CFG[node.type]?.name || node.type}...`);
     await sleep(600);
     if (node.type === 'groq') {
       const inputs = el.querySelectorAll('input, textarea, select');
       const apiKey = inputs[0]?.value?.trim();
       const model = inputs[1]?.value?.trim() || 'llama-3.1-8b-instant';
       const prompt = inputs[2]?.value?.trim();
-      if (!apiKey || !prompt) { el.classList.remove('running'); el.classList.add('error'); addLog('❌ API Key ও Prompt দাও!'); showToast('❌ API Key ও Prompt দাও!'); btn.disabled = false; btn.textContent = '▶ Run Workflow'; return; }
+      if (!apiKey || !prompt) { el.classList.remove('running'); el.classList.add('error'); addLog('❌ Add API Key and Prompt!'); showToast('❌ Add API Key and Prompt!'); btn.disabled = false; btn.textContent = '▶ Run Workflow'; return; }
       try {
-        addLog('🤖 AI কাজ করছে...');
+        addLog('🤖 AI working...');
         const res = await fetch('https://api.groq.com/openai/v1/chat/completions', {
           method: 'POST',
           headers: { 'Authorization': 'Bearer ' + apiKey, 'Content-Type': 'application/json' },
@@ -539,13 +531,13 @@ async function runWorkflow() {
         outEl.textContent = aiResult.substring(0, 120) + '...';
         el.classList.remove('running'); el.classList.add('done');
         connections.forEach(c => { if (c.from === node.id) c.active = true; });
-        drawConnections(); addLog('✅ AI output পাওয়া গেছে!');
+        drawConnections(); addLog('✅ AI output received!');
       } catch(err) { el.classList.remove('running'); el.classList.add('error'); addLog('❌ ' + err.message); showToast('❌ ' + err.message); btn.disabled = false; btn.textContent = '▶ Run Workflow'; return; }
     } else { el.classList.remove('running'); el.classList.add('done'); addLog('✅ ' + (CFG[node.type]?.name || node.type) + ' — Done'); }
   }
   btn.disabled = false; btn.textContent = '▶ Run Workflow';
   if (aiResult) { document.getElementById('modal-content').textContent = aiResult; document.getElementById('modal').classList.add('show'); }
-  else { showToast('✅ Workflow সফল!'); }
+  else { showToast('✅ Workflow complete!'); }
 }
 
 function addLog(msg) { const lb = document.getElementById('log-box'); lb.innerHTML += `<div>${msg}</div>`; lb.scrollTop = lb.scrollHeight; }
@@ -565,7 +557,7 @@ function loadTemplate(type) {
     setTimeout(() => addNode('gdocs', 800, 130), 450);
     setTimeout(() => { connections = [{from:1,to:2,active:false},{from:2,to:3,active:false},{from:3,to:4,active:false}]; nodeIdCounter = 4; drawConnections(); updateCount(); }, 600);
   }
-  showToast('✅ Template লোড হয়েছে!');
+  showToast('✅ Template loaded!');
 }
 
 function closeModal() { document.getElementById('modal').classList.remove('show'); }
