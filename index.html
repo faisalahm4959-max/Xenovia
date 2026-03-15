@@ -275,6 +275,9 @@ body { background: #0a0a0a; color: white; font-family: Arial; overflow-x: hidden
         <div class="node-group-title">🤖 AI</div>
         <div class="node-item" draggable="true" data-type="groq" ondragstart="dragStart(event)"><div class="node-icon icon-ai">✦</div>Groq AI (Free)</div>
         <div class="node-item" draggable="true" data-type="chatgpt" ondragstart="dragStart(event)"><div class="node-icon icon-ai">⬡</div>ChatGPT</div>
+        <div class="node-item" draggable="true" data-type="claude" ondragstart="dragStart(event)"><div class="node-icon icon-ai">✧</div>Claude</div>
+        <div class="node-item" draggable="true" data-type="gemini" ondragstart="dragStart(event)"><div class="node-icon icon-ai">◈</div>Gemini</div>
+        <div class="node-item" draggable="true" data-type="perplexity" ondragstart="dragStart(event)"><div class="node-icon icon-ai">◎</div>Perplexity</div>
       </div>
       <div class="node-group">
         <div class="node-group-title">📱 Google</div>
@@ -387,6 +390,9 @@ const CFG = {
   webhook:    { name:'Webhook',         cls:'icon-trigger', icon:'🪝', fields:[{l:'Path',t:'input',p:'/webhook'}] },
   groq:       { name:'Groq AI',         cls:'icon-ai',      icon:'✦', fields:[{l:'Groq API Key',t:'input',p:'gsk_...'},{l:'Model',t:'select',o:['llama-3.1-8b-instant','llama-3.3-70b-versatile','gemma2-9b-it']},{l:'Prompt',t:'textarea',p:'You are a YouTube content writer for Sleuth Vault channel...'}] },
   chatgpt:    { name:'ChatGPT',         cls:'icon-ai',      icon:'⬡', fields:[{l:'API Key',t:'input',p:'sk-...'},{l:'Prompt',t:'textarea',p:'Your prompt...'}] },
+  claude:     { name:'Claude (Anthropic)', cls:'icon-ai',   icon:'✧', fields:[{l:'API Key',t:'input',p:'sk-ant-...'},{l:'Prompt',t:'textarea',p:'Your prompt...'}] },
+  gemini:     { name:'Gemini',          cls:'icon-ai',      icon:'◈', fields:[{l:'API Key',t:'input',p:'AIza...'},{l:'Prompt',t:'textarea',p:'Your prompt...'}] },
+  perplexity: { name:'Perplexity',      cls:'icon-ai',      icon:'◎', fields:[{l:'API Key',t:'input',p:'pplx-...'},{l:'Prompt',t:'textarea',p:'Your prompt...'}] },
   gdocs:      { name:'Google Docs',     cls:'icon-google',  icon:'📄', fields:[{l:'Document Name',t:'input',p:'My Script'}] },
   gmail:      { name:'Gmail',           cls:'icon-google',  icon:'📧', fields:[{l:'To Email',t:'input',p:'you@gmail.com'},{l:'Subject',t:'input',p:'New Script Ready!'}] },
   youtube:    { name:'YouTube',         cls:'icon-google',  icon:'📺', fields:[{l:'Action',t:'select',o:['Search Keywords','Get Trending']}] },
